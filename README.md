@@ -5,11 +5,12 @@ Unlike conventional FIFOs it doesn't end at the end of memory block,instead it l
 #### How `full` and `empty` are implemented
 - When read pointer catches upto write pointer `empty` is asserted.
 - When write pointer catches upto read pointer `full` is asserted.
-- `looped` flag is asserted when write pointer loops back to 0 and deasserted when read pointer loop backs.
+
 #### The full/empty ambiguity problem
 - In circular fifo when `wr_ptr==rd_ptr` it becomes an ambiguity whether fifo is full or empty i.e. did write pointer caught upto read pointer or read pointer caught upto write pointer.
 - To solve this problem,the provided code uses `looped` flag.When `looped` is high,this means write pointer will catch upto read pointer and equality means full.
 - When `looped` is low that means read pointer will catch upto write pointer and equality means empty.
+- `looped` flag is asserted when write pointer loops back to 0 and deasserted when read pointer loop backs.
 
 ## RTL to GDS flow
 This design uses OpenLane for complete flow.
