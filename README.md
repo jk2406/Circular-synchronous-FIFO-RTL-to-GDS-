@@ -5,24 +5,30 @@ Unlike conventional FIFOs it doesn't end at the end of memory block,instead it l
 #### How `full` and `empty` are implemented
 - When read pointer catches upto write pointer `empty` is asserted.
 - When write pointer catches upto read pointer `full` is asserted.
-- To decide which one catches upto whom a special flag is used in the code that is `looped` flag.
 - `looped` flag is asserted when write pointer loops back to 0 and deasserted when read pointer loop backs.
-- 
-  
+#### The full/empty ambiguity problem
+- In circular fifo when `wr_ptr==rd_ptr` it becomes an ambiguity whether fifo is full or empty i.e. did write pointer caught upto read pointer or read pointer caught upto write pointer.
+- To solve this problem,the provided code uses `looped` flag.When `looped` is high,this means write pointer will catch upto read pointer and equality means full.
+- When `looped` is low that means read pointer will catch upto write pointer and equality means empty.
+
+## RTL to GDS flow
 This design uses OpenLane for complete flow.
-Install docker and openlane to verify the run.
-Run the following:
+Refer to online tutorials for installation.
+
+After successful installation run the following commands:
+
 ```
 cd OpenLane
 make mount 
 ```
-Go into designs and run:
+Wait for the docker environment to activate.
+now go into designs and run:
 ```
 mkdir fifo
 cd fifo
 ```
 Place `config.json` here.
- **DO NOT CHANGE `config.json` **
+ **DO NOT CHANGE `config.json`**
 Now do:
 ```
 mkdir src
@@ -35,4 +41,3 @@ cd ~/openlane
 ./flow.tcl -design fifo
 ```
 
-## RTL
