@@ -1,0 +1,22 @@
+{
+  "DESIGN_NAME": "syncfifo",
+  "VERILOG_FILES": 
+  [
+  "dir::src/syncfifo.sv"
+],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 100,
+  "FP_CORE_UTIL": 20,
+  "PL_TARGET_DENSITY": 0.6,
+  "RESET_PORT": "rstn",
+  "RESET_POLARITY": "LOW",
+  "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+  "GRT_REPAIR_ANTENNAS": true,
+  "RUN_HEURISTIC_DIODE_INSERTION": true,
+  "DIODE_CELL": "sky130_fd_sc_hd__diode_2",
+  "DIODE_CELL_PIN": "DIODE"
+
+
+
+}
+
