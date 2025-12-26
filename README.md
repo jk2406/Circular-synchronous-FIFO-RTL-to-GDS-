@@ -43,3 +43,8 @@ cd ~/openlane
 ```
 
 You will find your gds file in `designs/fifo/\<Your latest run\>/results/final/gds` if your flow was successfully completed.
+To open gds run:
+```
+klayout -e *
+```
+> `-e` is to open klayout in editor mode.
