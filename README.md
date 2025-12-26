@@ -42,3 +42,4 @@ cd ~/openlane
 ./flow.tcl -design fifo
 ```
 
+You will find your gds file in `designs/fifo/\<Your latest run\>/results/final/gds` if your flow was successfully completed.
