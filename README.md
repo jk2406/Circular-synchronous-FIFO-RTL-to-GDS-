@@ -13,6 +13,7 @@ Unlike conventional FIFOs it doesn't end at the end of memory block,instead it l
 - `looped` flag is asserted when write pointer loops back to 0 and deasserted when read pointer loop backs.
 
 ## RTL to GDS flow
+> Technology used here is `skywater 130` 
 This design uses OpenLane for complete flow.
 Refer to online tutorials for installation.
 
